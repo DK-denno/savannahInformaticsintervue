@@ -1,0 +1,86 @@
+# Python-specific
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.pyc
+
+# Django-specific
+*.log
+*.sqlite3
+db.sqlite3
+*.db
+*.db-journal
+
+# Django migrations
+*/migrations/*
+!*/migrations/__init__.py
+
+# Static files and media
+static/
+media/
+
+# Virtual environment
+virtualenv/
+virtual/
+venv/
+.env/
+.venv/
+env/
+env.bak/
+venv.bak/
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# IDEs and text editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+
+# macOS-specific
+.DS_Store
+
+# Windows-specific
+Thumbs.db
+ehthumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Test results
+.coverage
+*.cover
+*.py,cover
+nosetests.xml
+coverage.xml
+*.hypothesis/
+
+# Environment files
+.env
+.env.*
+
+# Docker
+docker-compose.override.yml
+*.env
+
+# Gunicorn
+gunicorn.sock
+
+# Local settings file
+local_settings.py
+
+# Other unwanted files
+*.log
+*.bak
+*.swp
+
+
+# Custom hidden files
+.firebase_configs.json
