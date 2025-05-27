@@ -80,3 +80,7 @@ local_settings.py
 *.log
 *.bak
 *.swp
+
+
+# Custom hidden files
+.firebase_configs.json

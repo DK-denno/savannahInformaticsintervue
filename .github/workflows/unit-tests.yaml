@@ -18,6 +18,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup Firebase
+        run: |
+          echo '${{ secrets.FIREBASE_CREDENTIALS }}' > firebase-key.json
+
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
