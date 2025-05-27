@@ -1,5 +1,4 @@
 name: Run test cases before merging code.
-
 on:
   push:
     branches-ignore:
