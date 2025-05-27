@@ -20,7 +20,7 @@ jobs:
 
       - name: Setup Firebase
         run: |
-          echo '${{ secrets.FIREBASE_CREDENTIALS }}' > firebase-key.json
+          echo '${{ secrets.FIREBASE_CREDENTIALS }}' > .firebase_configs.json
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
