@@ -12,7 +12,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
     strategy:
       matrix:
-        python-version: ["pypy3.9"]
+        python-version: ["3.10.13"]
 
     steps:
       - uses: actions/checkout@v4
