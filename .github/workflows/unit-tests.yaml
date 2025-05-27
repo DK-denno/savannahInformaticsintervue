@@ -38,6 +38,18 @@ jobs:
           SECRET_KEY: "xx56r_@x_jb8(rqiw5+xw^+@l#m(: %9h+!98k1o$ex3_zogx"
           MODE: dev
           DEBUG: True
+          DB_NAME: savannahinformaticinterview
+          DB_USER: savannahinformaticinterview
+          DB_PASSWORD: sbvN1xet4wRNB1rGkYjAjf8K7yFBsa3w
+          DB_HOST: "dpg-d0om9a8dl3ps73a48v7g-a.oregon-postgres.render.com"
+          DB_PORT: 5432
+          EMAIL_HOST: smtp.gmail.com
+          EMAIL_PORT: 587
+          EMAIL_USE_TLS: True
+          EMAIL_HOST_USER: dennisveer27@gmail.com
+          EMAIL_HOST_PASSWORD: ""
+          NGUMZO_API_KEY: ZxF3j5sxoPqVPZHseIF7onoiwQzopA
+          DYNAMIC_METHOD_VIEWS: "app.dynamic"
           FIREBASE_CREDENTIALS_PATH: ".firebase_configs.json"
           AT_USERNAME: intervue
           AT_API_KEY: atsk_7b49eb9d831017c250c57fde5a08d4f40861d80b69c9f42339b976d379ca6cc5ab696e60
