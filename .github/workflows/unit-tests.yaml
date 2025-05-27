@@ -1,4 +1,4 @@
-name: Run test cases before erging code.
+name: Run test cases before merging code.
 
 on:
   push:

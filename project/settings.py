@@ -47,8 +47,6 @@ INSTALLED_APPS = [
     'app.apps.AppConfig',
     "rest_framework",
     'rest_framework.authtoken',
-    'cloudinary',
-    'simple_mail',
 ]
 
 MIDDLEWARE = [
