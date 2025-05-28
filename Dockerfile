@@ -1,8 +1,8 @@
 # Use an official Python runtime as a parent image
-FROM python:3.10
+FROM python:3.10.13
 
 # Set environment variables for Python buffering
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONUNBUFFERED=1
 
 # Set the working directory in the container
 WORKDIR /app
