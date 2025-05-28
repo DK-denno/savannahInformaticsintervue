@@ -1,7 +1,7 @@
 name: Deploy to
 on:
   push:
-    branches-ignore:
+    branches:
       - dev
 jobs:
   build:
