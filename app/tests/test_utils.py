@@ -24,7 +24,7 @@ class UtilityFunctionTests(TestCase):
         self.assertFalse(roles_match(user_roles, task_roles))
 
     def test_arrayToString(self):
-        values = [1, 2, 4]
+        values = [1, 2, 3]
         result = arrayToString(values)
         self.assertEqual(result, "1,2,3")
 
