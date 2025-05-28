@@ -64,75 +64,9 @@ jobs:
         with:
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
-          
+
       - name: Build Docker Image
         run: docker build -t 3c0ww3rc3/savannahinformatics:latest .
-
-      - name: Push to registry
-        run: docker push 3c0ww3rc3/savannahinformatics:latest
-
-
-
-          # name: Deploy to Dev.
-
-# on:
-#   push:
-#     branches:
-#       - dev
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     env:
-#       GH_VERSION: dev-${{ github.sha }}
-#       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-#     strategy:
-#       matrix:
-#         python-version: ["pypy3.9"]
-
-#     steps:
-#       - uses: actions/checkout@v4
-
-#       - name: Set up Python ${{ matrix.python-version }}
-#         uses: actions/setup-python@v5
-#         with:
-#           python-version: ${{ matrix.python-version }}
-
-#       - name: Install dependencies
-#         run: |
-#           python -m pip install --upgrade pip
-#           pip install -r requirements.txt
-
-#       - name: Run Tests
-#         run: |
-#           python manage.py makemigrations
-#           python manage.py migrate
-#           python manage.py test
-#         env:
-#           pub_key: ""
-#           secret: ""
-#           SECRET_KEY: "xx56r_@x_jb8(rqiw5+xw^+@l#m(: %9h+!98k1o$ex3_zogx"
-#           MODE: dev
-#           DEBUG: True
-#           FIREBASE_CREDENTIALS_PATH: ".firebase_configs.json"
-#           AT_USERNAME: intervue
-#           AT_API_KEY: atsk_7b49eb9d831017c250c57fde5a08d4f40861d80b69c9f42339b976d379ca6cc5ab696e60
-#           RESEND_EMAIL_API_KEY: "re_Dru8T8X7_8pQATzpP4NKo1u9eC4LwK79v"
-#           RESEND_TO_MAIL: "test@dk-denno.com"
-#           RESEND_EMAIL_URL: "https://api.resend.com/emails"
-#           TEST_DB_NAME: testdbsavannah
-#           TEST_DB_USER: testdbsavannah
-#           TEST_DB_PASSWORD: IKhX7HAHdlLKmpSYSymPI2fFdfEyKZtq
-#           TEST_DB_HOST: "dpg-d0q3feruibrs73dk3sm0-a.oregon-postgres.render.com"
-#           TEST_DB_PORT: 5432
-      - name: Build Docker Image
-        run: docker build -t 3c0ww3rc3/savannahinformatics:latest .
-
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.REGISTRY_USERNAME }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
 
       - name: Push to registry
         run: docker push 3c0ww3rc3/savannahinformatics:latest
