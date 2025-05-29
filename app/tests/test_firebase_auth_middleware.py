@@ -171,7 +171,7 @@ class FirebaseAuthMiddlewareTests(TestCase):
             "returnSecureToken": True
         }
         response = requests.post(url, json=payload)
-        response.raise_for_status()  # raises error if login fails
+        response.raise_for_status()
         res = response.json()
         self.valid_token = res["idToken"]
         self.valid_uid = res["localId"]

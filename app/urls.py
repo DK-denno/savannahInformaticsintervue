@@ -7,6 +7,7 @@ urlpatterns = [
     path("createNewUser/", views.createNewUser, name="createNewUser"),
     path("createOrganisation/", views.createOrganisation, name="createOrganisation"),
     path("getUserDetails/", views.getUserDetails, name="getUserDetails"),
+    path("updateUserDetails/", views.updateUserDetails, name="updateUserDetails"),
     path("getOrganisationDetails/", views.getOrganisationDetails, name="getOrganisationDetails"),
     path("adminCreateNewUser/", views.adminCreateNewUser, name="adminCreateNewUser"),
     path("createRoles/", views.createRoles, name="createRoles"),

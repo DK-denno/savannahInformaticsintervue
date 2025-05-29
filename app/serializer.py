@@ -10,7 +10,7 @@ class CustomUserSerializer(serializers.ModelSerializer):
 
     def get_roles(self, obj):
         return obj.get_roles_array()
-
+        
 class RbacTasksSerilizer(serializers.ModelSerializer):
     roles = serializers.SerializerMethodField()
 
@@ -21,32 +21,27 @@ class RbacTasksSerilizer(serializers.ModelSerializer):
     def get_roles(self, obj):
         return obj.get_roles_array()
 
-
 class OrganisationsSerializer(serializers.ModelSerializer):
     admin = CustomUserSerializer(read_only=True)
     class Meta:
         model = Organisation
         fields = ['id', 'name', 'primaryPhoneNumber', 'admin']
 
-
 class RoleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Role
         fields = ['name', 'description']
-
 
 class ProductCategoriesSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductCategories
         fields = ['id', 'name', 'description']
 
-
 class ProductSerializer(serializers.ModelSerializer):
     category = ProductCategoriesSerializer(read_only=True)
     class Meta:
         model = Products
         fields = ['id', 'category', 'name', 'price', 'isActive']
-
 
 class OrdersSerializer(serializers.ModelSerializer):
     user = CustomUserSerializer(read_only=True)

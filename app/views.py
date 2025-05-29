@@ -71,21 +71,27 @@ def createNewUser(request):
         logger.exception("Something went wrong: %s", e)
         return create_response(500, "internal server error", str(e))
 
+@api_view(['POST'])
+def updateUserDetails(request):
+    data = request.data
+    user = request.firebase_user
+    user.username=data.get("username", user.username)
+    user.first_name=data.get("firstName", user.first_nam)
+    user.last_name=data.get("lastName", user.last_name)
+    user.phoneNumber=data.get("phoneNumber", user.phoneNumber)
+    user.email=data.get("email", user.email)
+    user.save()
 
 @api_view(['POST'])
 def createOrganisation(request):
     try:
-        # Decode and parse JSON body
         data = request.data
 
-        # Validate required fields
         result = validateFieldsPassed(data, "name", "primaryPhoneNumber")
         if result is not None:
             return create_response(502, "bad request", f"Expected fields {result}")
 
         user = request.firebase_user
-
-        # Create organisation
         organisation = Organisation(
             name=data.get("name"),
             primaryPhoneNumber=data.get("primaryPhoneNumber"),
@@ -127,6 +133,17 @@ def createOrganisation(request):
         return create_response(500, "internal server error", str(e))
 
 @api_view(['POST'])
+def updateOrganisationDetails(request):
+    data = request.data
+    organisation = request.firebase_user.organisation
+    user.username=data.get("username", user.username)
+    user.first_name=data.get("firstName", user.first_nam)
+    user.last_name=data.get("lastName", user.last_name)
+    user.phoneNumber=data.get("phoneNumber", user.phoneNumber)
+    user.email=data.get("email", user.email)
+    user.save()
+
+@api_view(['POST'])
 def getUserDetails(request):
     res = CustomUserSerializer(instance=request.firebase_user)
     return create_response(200, "success", res.data)
@@ -139,8 +156,6 @@ def getOrganisationDetails(request):
 @api_view(['POST'])
 def createRoles(request):
     data = request.data
-
-    # Validate required fields
     result = validateFieldsPassed(data, "name", "description")
     if result is not None:
         return create_response(502, "bad request", f"Expected fields {result}")
@@ -390,7 +405,7 @@ def creatOrder(request):
         order = createOrder(request.firebase_user, product, data)
         sendSmSMessage(order)
         sendEmailMessage(order)
-        # res = ProductSerializer(instance=existingProduct, many=True)
+
         return create_response(200, "success", {})
     except Exception as e:
         logger.exception("Something went wrong: %s", e)
@@ -508,7 +523,7 @@ def createAdminEmailMessageFromOrder(order) -> str:
             "userPhoneNumber":order.user.phoneNumber
         }
         message = (
-            "Dear {organisationName} admin, We have a logged a new order"
+            "Dear {organisationName} admin, We have logged a new order"
             " with the following details :- \n"
             " Product Name: {productName} \n"
             " Product Price: {price}\n"

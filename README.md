@@ -125,7 +125,6 @@ The project is configured with GitHub Actions to automatically build and push Do
 ## Environment Variables
 Required environment variables:
 ```
-
 export pub_key=""
 export secret=
 export SECRET_KEY=""

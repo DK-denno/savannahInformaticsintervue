@@ -118,9 +118,6 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 
-# ALLOWED_HOSTS=['127.0.0.1','http://localhost:4200',
-#     'd2c1-105-163-0-252.ngrok-free.app', 'localhost']
-
 CSRF_TRUSTED_ORIGINS = ['http://localhost']
 
 UPLOADCARE = {
@@ -173,10 +170,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "static"),
-# ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
